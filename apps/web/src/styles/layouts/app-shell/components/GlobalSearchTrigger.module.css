@@ -1,0 +1,45 @@
+.dialog {
+  display: grid;
+  gap: var(--space-4);
+  min-inline-size: min(34rem, calc(100vw - var(--space-8)));
+}
+
+.dialogHeader {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-3);
+  align-items: end;
+}
+
+.results {
+  display: grid;
+  gap: var(--space-2);
+  max-block-size: min(24rem, 60vh);
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.result {
+  display: grid;
+  gap: var(--space-1);
+  inline-size: 100%;
+  padding: var(--space-3);
+  color: var(--text-primary);
+  background: var(--surface-primary);
+  border: var(--border-width) solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font: inherit;
+  text-align: start;
+
+  &:hover {
+    background: var(--surface-interactive-hover);
+    border-color: var(--border-default);
+  }
+
+  small {
+    color: var(--text-secondary);
+  }
+}

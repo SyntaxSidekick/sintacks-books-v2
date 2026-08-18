@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-block-size: var(--control-height-lg);
+  padding: var(--space-3);
+  color: white;
+  background: rgb(255 255 255 / 8%);
+  border: var(--border-width) solid rgb(255 255 255 / 12%);
+  border-radius: var(--radius-lg);
+
+  span {
+    display: grid;
+    min-inline-size: 0;
+  }
+
+  small {
+    color: rgb(255 255 255 / 70%);
+  }
+}

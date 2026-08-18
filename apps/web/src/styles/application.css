@@ -1,0 +1,11 @@
+@layer sintacks.base {
+  #root {
+    min-block-size: 100vh;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+}

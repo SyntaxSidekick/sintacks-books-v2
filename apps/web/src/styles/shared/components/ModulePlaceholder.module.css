@@ -1,0 +1,16 @@
+.root {
+  display: grid;
+  gap: var(--space-5);
+  max-inline-size: 48rem;
+}
+
+.message {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.eyebrow {
+  color: var(--text-brand);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}

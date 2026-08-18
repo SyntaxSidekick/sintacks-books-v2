@@ -186,9 +186,15 @@ importers:
       "@sintacks/contracts":
         specifier: workspace:*
         version: link:../../packages/contracts
+      "@sintacks/design-system":
+        specifier: workspace:*
+        version: link:../../packages/design-system
       "@tanstack/react-query":
         specifier: ^5.85.5
         version: 5.101.4(react@19.2.8)
+      lucide-react:
+        specifier: ^1.32.0
+        version: 1.32.0(react@19.2.8)
       msw:
         specifier: ^2.10.5
         version: 2.15.0(@types/node@24.13.3)(typescript@5.9.3)

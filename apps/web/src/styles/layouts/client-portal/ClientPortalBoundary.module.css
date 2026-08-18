@@ -1,0 +1,13 @@
+.root {
+  display: grid;
+  min-block-size: 100vh;
+  padding: clamp(var(--space-4), 4vw, var(--space-8));
+  background: var(--background-canvas);
+}
+
+.content {
+  display: grid;
+  align-content: start;
+  gap: var(--space-5);
+  max-inline-size: 48rem;
+}

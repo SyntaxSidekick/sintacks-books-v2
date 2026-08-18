@@ -1,0 +1,15 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: rgb(255 255 255 / 92%);
+
+  span {
+    display: grid;
+    min-inline-size: 0;
+  }
+
+  small {
+    color: rgb(255 255 255 / 62%);
+  }
+}

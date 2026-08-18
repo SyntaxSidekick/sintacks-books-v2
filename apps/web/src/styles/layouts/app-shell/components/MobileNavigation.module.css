@@ -1,0 +1,17 @@
+.root {
+  display: grid;
+  gap: var(--space-4);
+  min-inline-size: min(22rem, calc(100vw - var(--space-8)));
+  color: white;
+  background:
+    radial-gradient(circle at 18% 0, rgb(37 99 235 / 36%), transparent 12rem),
+    linear-gradient(180deg, var(--primitive-midnight-900), var(--primitive-midnight-950));
+  border-radius: var(--radius-lg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
