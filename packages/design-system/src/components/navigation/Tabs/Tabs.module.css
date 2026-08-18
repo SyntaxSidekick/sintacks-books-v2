@@ -1,0 +1,24 @@
+.root {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.list {
+  display: flex;
+  gap: var(--space-2);
+  border-block-end: var(--border-width) solid var(--border-default);
+}
+
+.tab {
+  padding: var(--space-3) var(--space-4);
+  color: var(--text-secondary);
+  background: transparent;
+  border: 0;
+  border-block-end: var(--border-width-strong) solid transparent;
+  cursor: pointer;
+
+  &[aria-selected="true"] {
+    color: var(--text-brand);
+    border-block-end-color: var(--interactive-primary);
+  }
+}

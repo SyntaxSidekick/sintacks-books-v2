@@ -1,0 +1,8 @@
+@layer sintacks.tokens {
+  :root {
+    --text-heading-font: var(--font-family-display);
+    --text-body-font: var(--font-family-sans);
+    --text-code-font: var(--font-family-mono);
+    --numeric-font-variant: tabular-nums;
+  }
+}

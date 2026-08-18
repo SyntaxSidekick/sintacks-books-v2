@@ -1,0 +1,13 @@
+node_modules
+.turbo
+.git
+.env
+.env.*
+dist
+build
+coverage
+test-results
+playwright-report
+storybook-static
+*.log
+local-storage

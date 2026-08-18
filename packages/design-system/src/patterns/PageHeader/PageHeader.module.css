@@ -1,0 +1,20 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--text-heading-font);
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-tight);
+}
+
+.description {
+  max-inline-size: var(--content-width-sm);
+  margin: var(--space-2) 0 0;
+  color: var(--text-secondary);
+}

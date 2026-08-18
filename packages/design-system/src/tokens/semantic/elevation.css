@@ -1,0 +1,7 @@
+@layer sintacks.tokens {
+  :root {
+    --elevation-surface: var(--shadow-xs);
+    --elevation-raised: var(--shadow-sm);
+    --elevation-overlay: var(--shadow-lg);
+  }
+}

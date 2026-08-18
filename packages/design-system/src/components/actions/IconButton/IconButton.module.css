@@ -1,0 +1,6 @@
+.root {
+  inline-size: var(--control-height-md);
+  min-inline-size: var(--touch-target-min);
+  min-block-size: var(--touch-target-min);
+  padding: 0;
+}

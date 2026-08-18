@@ -1,0 +1,4 @@
+{
+  "extends": "../../packages/typescript-config/react.json",
+  "include": [".storybook/**/*.ts", "src/**/*.ts", "src/**/*.tsx"]
+}

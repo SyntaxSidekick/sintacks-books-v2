@@ -1,0 +1,144 @@
+services:
+  postgres:
+    image: postgres:17.6-bookworm
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-sintacks_books_dev}
+      POSTGRES_USER: ${POSTGRES_USER:-sintacks_app}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-replace-in-production}
+      LANG: C.UTF-8
+    ports:
+      - "${POSTGRES_PORT:-5440}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [sintacks]
+
+  redis:
+    image: redis:8.2.1-bookworm
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "${REDIS_PORT:-6390}:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [sintacks]
+
+  minio:
+    image: minio/minio:RELEASE.2025-07-23T15-54-02Z
+    command: ["server", "/data", "--console-address", ":9001"]
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-sintacks-dev}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-replace-in-production}
+    ports:
+      - "${MINIO_API_PORT:-9010}:9000"
+      - "${MINIO_CONSOLE_PORT:-9011}:9001"
+    volumes:
+      - minio-data:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [sintacks]
+
+  create-bucket:
+    image: minio/mc:RELEASE.2025-07-21T05-28-08Z
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      "mc alias set local http://minio:9000 $${MINIO_ROOT_USER:-sintacks-dev} $${MINIO_ROOT_PASSWORD:-replace-in-production}
+      && mc mb --ignore-existing local/$${S3_BUCKET:-sintacks-books-dev}
+      && mc anonymous set none local/$${S3_BUCKET:-sintacks-books-dev}"
+    networks: [sintacks]
+
+  mailpit:
+    image: axllent/mailpit:v1.27.8
+    ports:
+      - "${MAILPIT_SMTP_PORT:-1030}:1025"
+      - "${MAILPIT_WEB_PORT:-8030}:8025"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:8025"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [sintacks]
+
+  api:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/api.Dockerfile
+    environment:
+      API_PORT: 3010
+      DATABASE_URL: postgresql://sintacks_app:replace-in-production@postgres:5432/sintacks_books_dev?schema=public
+      REDIS_URL: redis://redis:6379
+      S3_ENDPOINT: http://minio:9000
+      S3_REGION: us-east-1
+      S3_ACCESS_KEY_ID: sintacks-dev
+      S3_SECRET_ACCESS_KEY: replace-in-production
+      S3_BUCKET: sintacks-books-dev
+      S3_FORCE_PATH_STYLE: "true"
+      SMTP_HOST: mailpit
+      SMTP_PORT: 1025
+      EMAIL_FROM: development@sintacks.invalid
+      BETTER_AUTH_SECRET: replace-in-production
+      BETTER_AUTH_URL: http://localhost:3010
+      WEB_PUBLIC_API_BASE_URL: http://localhost:3010
+    ports:
+      - "${API_PORT:-3010}:3010"
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      create-bucket: { condition: service_completed_successfully }
+      mailpit: { condition: service_healthy }
+    networks: [sintacks]
+
+  web:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/web.Dockerfile
+    ports:
+      - "${WEB_PORT:-5185}:5185"
+    depends_on:
+      api: { condition: service_healthy }
+    networks: [sintacks]
+
+  worker:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/worker.Dockerfile
+    environment:
+      DATABASE_URL: postgresql://sintacks_app:replace-in-production@postgres:5432/sintacks_books_dev?schema=public
+      REDIS_URL: redis://redis:6379
+      S3_ENDPOINT: http://minio:9000
+      S3_REGION: us-east-1
+      S3_ACCESS_KEY_ID: sintacks-dev
+      S3_SECRET_ACCESS_KEY: replace-in-production
+      S3_BUCKET: sintacks-books-dev
+      S3_FORCE_PATH_STYLE: "true"
+      SMTP_HOST: mailpit
+      SMTP_PORT: 1025
+      EMAIL_FROM: development@sintacks.invalid
+      BETTER_AUTH_SECRET: replace-in-production
+      BETTER_AUTH_URL: http://localhost:3010
+    depends_on:
+      redis: { condition: service_healthy }
+    networks: [sintacks]
+
+networks:
+  sintacks:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  redis-data:
+  minio-data:

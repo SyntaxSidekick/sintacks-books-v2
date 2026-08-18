@@ -1,0 +1,37 @@
+@layer sintacks.tokens {
+  :root {
+    --brand-primary: var(--primitive-indigo-600);
+    --brand-primary-hover: var(--primitive-indigo-700);
+    --brand-primary-active: var(--primitive-indigo-800);
+    --brand-accent: var(--primitive-violet-600);
+    --brand-accent-soft: var(--primitive-indigo-50);
+    --text-primary: var(--primitive-ink-900);
+    --text-secondary: var(--primitive-slate-600);
+    --text-muted: var(--primitive-slate-400);
+    --text-inverse: var(--primitive-white);
+    --text-brand: var(--primitive-indigo-600);
+    --background-canvas: var(--primitive-canvas);
+    --surface-primary: var(--primitive-white);
+    --surface-secondary: var(--primitive-slate-100);
+    --surface-tertiary: var(--primitive-slate-50);
+    --surface-raised: var(--primitive-white);
+    --surface-overlay: var(--primitive-white);
+    --border-subtle: var(--primitive-slate-100);
+    --border-default: var(--primitive-slate-200);
+    --border-strong: var(--primitive-slate-300);
+    --interactive-primary: var(--primitive-indigo-600);
+    --interactive-hover: var(--primitive-indigo-700);
+    --interactive-pressed: var(--primitive-indigo-800);
+    --focus-ring-color: var(--primitive-indigo-600);
+    --status-success: var(--primitive-green-600);
+    --status-success-soft: var(--primitive-green-100);
+    --status-warning: var(--primitive-amber-600);
+    --status-warning-soft: var(--primitive-amber-100);
+    --status-danger: var(--primitive-red-600);
+    --status-danger-soft: var(--primitive-red-100);
+    --status-info: var(--primitive-indigo-600);
+    --status-info-soft: var(--primitive-indigo-50);
+    --status-neutral: var(--primitive-slate-600);
+    --status-neutral-soft: var(--primitive-slate-100);
+  }
+}

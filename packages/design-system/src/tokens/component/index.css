@@ -1,0 +1,18 @@
+@layer sintacks.tokens {
+  :root {
+    --button-primary-background: var(--interactive-primary);
+    --button-primary-background-hover: var(--interactive-hover);
+    --button-primary-text: var(--text-inverse);
+    --button-secondary-background: var(--surface-primary);
+    --button-secondary-background-hover: var(--surface-secondary);
+    --button-secondary-text: var(--text-primary);
+    --button-danger-background: var(--status-danger);
+    --button-danger-text: var(--text-inverse);
+    --field-background: var(--surface-primary);
+    --field-border: var(--border-default);
+    --field-border-hover: var(--border-strong);
+    --field-border-invalid: var(--status-danger);
+    --field-text: var(--text-primary);
+    --field-placeholder: var(--text-muted);
+  }
+}

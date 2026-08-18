@@ -1,0 +1,13 @@
+.dialog {
+  max-inline-size: min(42rem, calc(100vw - var(--space-6)));
+  padding: var(--space-6);
+  color: var(--text-primary);
+  background: var(--surface-overlay);
+  border: var(--border-width) solid var(--border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elevation-overlay);
+
+  &::backdrop {
+    background: rgb(15 23 42 / 48%);
+  }
+}

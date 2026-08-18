@@ -1,0 +1,89 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding-block: var(--space-1);
+  padding-inline: var(--space-3);
+  border: var(--border-width) solid transparent;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.2;
+  white-space: nowrap;
+
+  &[data-size="small"] {
+    padding-block: 0.125rem;
+    padding-inline: var(--space-2);
+    font-size: var(--font-size-xs);
+  }
+
+  &[data-variant="neutral"] {
+    color: var(--status-neutral);
+    background: var(--status-neutral-soft);
+    border-color: color-mix(in srgb, var(--status-neutral) 20%, transparent);
+  }
+
+  &[data-variant="success"] {
+    color: var(--status-success);
+    background: var(--status-success-soft);
+    border-color: color-mix(in srgb, var(--status-success) 20%, transparent);
+  }
+
+  &[data-variant="warning"] {
+    color: var(--status-warning);
+    background: var(--status-warning-soft);
+    border-color: color-mix(in srgb, var(--status-warning) 20%, transparent);
+  }
+
+  &[data-variant="danger"] {
+    color: var(--status-danger);
+    background: var(--status-danger-soft);
+    border-color: color-mix(in srgb, var(--status-danger) 20%, transparent);
+  }
+
+  &[data-variant="info"],
+  &[data-variant="brand"] {
+    color: var(--status-info);
+    background: var(--status-info-soft);
+    border-color: color-mix(in srgb, var(--status-info) 20%, transparent);
+  }
+}
+
+.card {
+  padding: var(--space-5);
+  color: var(--text-primary);
+  background: var(--surface-card-background);
+  border: var(--border-width) solid var(--surface-card-border);
+  border-radius: var(--surface-card-radius);
+  box-shadow: var(--elevation-surface);
+}
+
+.keyValue {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.key {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.value {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+  font-variant-numeric: var(--numeric-font-variant);
+}
+
+.descriptionList {
+  display: grid;
+  grid-template-columns: minmax(8rem, max-content) 1fr;
+  gap: var(--space-3) var(--space-5);
+}
+
+.term {
+  color: var(--text-secondary);
+}
+
+.description {
+  margin: 0;
+}

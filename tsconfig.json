@@ -1,0 +1,16 @@
+{
+  "extends": "./packages/typescript-config/base.json",
+  "files": [],
+  "references": [
+    { "path": "./apps/web" },
+    { "path": "./apps/api" },
+    { "path": "./apps/worker" },
+    { "path": "./packages/contracts" },
+    { "path": "./packages/config" },
+    { "path": "./packages/database" },
+    { "path": "./packages/auth" },
+    { "path": "./packages/storage" },
+    { "path": "./packages/email" },
+    { "path": "./packages/observability" }
+  ]
+}

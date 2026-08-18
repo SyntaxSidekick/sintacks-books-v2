@@ -1,0 +1,8 @@
+@layer sintacks.tokens {
+  :root {
+    --focus-ring-width: var(--border-width-strong);
+    --focus-ring-offset: 2px;
+    --disabled-opacity: 0.5;
+    --touch-target-min: 2.75rem;
+  }
+}

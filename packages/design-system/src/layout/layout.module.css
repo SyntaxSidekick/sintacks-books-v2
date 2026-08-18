@@ -1,0 +1,27 @@
+.container {
+  inline-size: min(100% - var(--space-6), var(--container-width, var(--content-width-lg)));
+  margin-inline: auto;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap, var(--space-4));
+}
+
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--inline-gap, var(--space-3));
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min, 16rem)), 1fr));
+  gap: var(--grid-gap, var(--space-4));
+}
+
+.section {
+  padding-block: var(--section-padding, var(--space-8));
+}

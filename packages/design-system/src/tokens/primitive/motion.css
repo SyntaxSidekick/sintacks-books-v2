@@ -1,0 +1,9 @@
+@layer sintacks.tokens {
+  :root {
+    --duration-instant: 60ms;
+    --duration-fast: 120ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  }
+}

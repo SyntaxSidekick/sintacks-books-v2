@@ -1,0 +1,13 @@
+@layer sintacks.tokens {
+  [data-theme="high-contrast"] {
+    color-scheme: light;
+    --background-canvas: var(--primitive-white);
+    --surface-primary: var(--primitive-white);
+    --surface-secondary: var(--primitive-slate-50);
+    --text-primary: var(--primitive-ink-950);
+    --text-secondary: var(--primitive-ink-900);
+    --border-default: var(--primitive-slate-700);
+    --border-strong: var(--primitive-ink-950);
+    --focus-ring-width: var(--border-width-thick);
+  }
+}

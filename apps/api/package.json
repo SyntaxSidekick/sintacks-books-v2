@@ -1,0 +1,44 @@
+{
+  "name": "@sintacks/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/server.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:unit": "vitest run src/**/*.test.ts --exclude src/**/*.integration.test.ts",
+    "test:integration": "vitest run src/**/*.integration.test.ts",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@sintacks/config": "workspace:*",
+    "@sintacks/contracts": "workspace:*",
+    "@sintacks/database": "workspace:*",
+    "@sintacks/email": "workspace:*",
+    "@sintacks/observability": "workspace:*",
+    "@sintacks/storage": "workspace:*",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "helmet": "^8.1.0",
+    "ioredis": "^5.7.0",
+    "nanoid": "^5.1.5",
+    "pino-http": "^10.5.0",
+    "swagger-ui-express": "^5.0.1",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.8.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/supertest": "^6.0.3",
+    "@types/swagger-ui-express": "^4.1.8",
+    "tsx": "^4.20.4"
+  }
+}

@@ -1,0 +1,7 @@
+@layer sintacks.tokens {
+  :root {
+    --border-width: 1px;
+    --border-width-strong: 2px;
+    --border-width-thick: 3px;
+  }
+}

@@ -1,0 +1,8 @@
+.tmp-design-system-v2-review/
+node_modules/
+dist/
+build/
+coverage/
+storybook-static/
+apps/storybook/storybook-static/
+packages/*/dist/

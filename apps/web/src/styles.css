@@ -1,0 +1,35 @@
+/* Stage 1 temporary diagnostic styling. Replace during design-system/application-shell stages. */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: #1f2937;
+  background: #f8fafc;
+}
+
+.diagnostics {
+  max-width: 48rem;
+  margin: 4rem auto;
+  padding: 1.5rem;
+}
+
+.diagnostics h1 {
+  font-size: 1.5rem;
+  font-weight: 650;
+}
+
+.diagnostics dl {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.diagnostics dl > div {
+  display: grid;
+  grid-template-columns: minmax(10rem, 14rem) 1fr;
+  gap: 1rem;
+  padding-block: 0.75rem;
+  border-block-end: 1px solid #d1d5db;
+}
+
+.diagnostics dt {
+  font-weight: 650;
+}

@@ -1,0 +1,7 @@
+@layer sintacks.tokens {
+  :root {
+    --surface-card-background: var(--surface-primary);
+    --surface-card-border: var(--border-default);
+    --surface-card-radius: var(--radius-lg);
+  }
+}

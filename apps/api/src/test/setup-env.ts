@@ -1,0 +1,11 @@
+process.env.NODE_ENV = "test";
+process.env.APP_ENV = "test";
+process.env.DATABASE_URL =
+  "postgresql://sintacks_app:test@localhost:5440/sintacks_books_test?schema=public";
+process.env.REDIS_URL = "redis://localhost:6390";
+process.env.S3_ENDPOINT = "http://localhost:9010";
+process.env.S3_ACCESS_KEY_ID = "test";
+process.env.S3_SECRET_ACCESS_KEY = "test-secret";
+process.env.S3_BUCKET = "sintacks-books-test";
+process.env.BETTER_AUTH_SECRET = "test-secret-value";
+process.env.BETTER_AUTH_URL = "http://localhost:3010";
