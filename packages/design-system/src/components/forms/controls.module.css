@@ -7,6 +7,7 @@
   border: var(--border-width) solid var(--field-border);
   border-radius: var(--radius-md);
   box-shadow: var(--elevation-surface);
+  font: inherit;
 
   &::placeholder {
     color: var(--field-placeholder);
@@ -14,10 +15,12 @@
 
   &:hover:not(:disabled) {
     border-color: var(--field-border-hover);
+    background: var(--surface-interactive-hover);
   }
 
   &[aria-invalid="true"] {
     border-color: var(--field-border-invalid);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--status-danger) 13%, transparent);
   }
 
   &:disabled {
@@ -46,9 +49,11 @@
   inline-size: 2.75rem;
   block-size: 1.5rem;
   appearance: none;
-  background: var(--border-strong);
+  background: linear-gradient(180deg, var(--surface-tertiary), var(--border-strong));
+  border: var(--border-width) solid var(--border-default);
   border-radius: var(--radius-full);
   cursor: pointer;
+  box-shadow: inset 0 1px 2px rgb(15 23 42 / 12%);
 
   &::before {
     display: block;
@@ -57,11 +62,13 @@
     margin: 0.25rem;
     background: var(--surface-primary);
     border-radius: var(--radius-full);
+    box-shadow: var(--elevation-surface);
     content: "";
   }
 
   &:checked {
-    background: var(--interactive-primary);
+    background: linear-gradient(135deg, var(--interactive-primary), var(--brand-accent));
+    border-color: transparent;
   }
 
   &:checked::before {

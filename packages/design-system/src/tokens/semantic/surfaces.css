@@ -1,7 +1,16 @@
 @layer sintacks.tokens {
   :root {
-    --surface-card-background: var(--surface-primary);
+    --surface-card-background: linear-gradient(
+      180deg,
+      var(--surface-primary),
+      color-mix(in srgb, var(--surface-primary) 92%, var(--surface-secondary))
+    );
     --surface-card-border: var(--border-default);
     --surface-card-radius: var(--radius-lg);
+    --surface-panel-background: var(--surface-primary);
+    --surface-panel-border: color-mix(in srgb, var(--border-default) 82%, transparent);
+    --surface-panel-shadow: var(--elevation-raised);
+    --surface-popover-shadow: var(--elevation-floating);
+    --surface-dialog-shadow: var(--elevation-dialog);
   }
 }

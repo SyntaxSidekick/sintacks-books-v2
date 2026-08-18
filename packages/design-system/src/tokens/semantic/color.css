@@ -1,28 +1,39 @@
 @layer sintacks.tokens {
   :root {
-    --brand-primary: var(--primitive-indigo-600);
+    --brand-primary: var(--primitive-sapphire-600);
     --brand-primary-hover: var(--primitive-indigo-700);
     --brand-primary-active: var(--primitive-indigo-800);
     --brand-accent: var(--primitive-violet-600);
-    --brand-accent-soft: var(--primitive-indigo-50);
-    --text-primary: var(--primitive-ink-900);
+    --brand-accent-soft: color-mix(
+      in srgb,
+      var(--primitive-indigo-50) 76%,
+      var(--primitive-cyan-100)
+    );
+    --text-primary: var(--primitive-ink-925);
     --text-secondary: var(--primitive-slate-600);
-    --text-muted: var(--primitive-slate-400);
+    --text-muted: var(--primitive-slate-500);
     --text-inverse: var(--primitive-white);
     --text-brand: var(--primitive-indigo-600);
-    --background-canvas: var(--primitive-canvas);
+    --background-canvas: #f4f7fb;
     --surface-primary: var(--primitive-white);
-    --surface-secondary: var(--primitive-slate-100);
-    --surface-tertiary: var(--primitive-slate-50);
+    --surface-secondary: #f8fafc;
+    --surface-tertiary: #eef3f9;
+    --surface-sunken: #edf2f8;
     --surface-raised: var(--primitive-white);
     --surface-overlay: var(--primitive-white);
-    --border-subtle: var(--primitive-slate-100);
-    --border-default: var(--primitive-slate-200);
+    --surface-interactive: #ffffff;
+    --surface-interactive-hover: #f8fbff;
+    --border-subtle: #edf2f7;
+    --border-default: #dbe4ef;
     --border-strong: var(--primitive-slate-300);
-    --interactive-primary: var(--primitive-indigo-600);
+    --interactive-primary: var(--primitive-sapphire-600);
     --interactive-hover: var(--primitive-indigo-700);
     --interactive-pressed: var(--primitive-indigo-800);
-    --focus-ring-color: var(--primitive-indigo-600);
+    --focus-ring-color: color-mix(
+      in srgb,
+      var(--primitive-sapphire-500) 72%,
+      var(--primitive-cyan-400)
+    );
     --status-success: var(--primitive-green-600);
     --status-success-soft: var(--primitive-green-100);
     --status-warning: var(--primitive-amber-600);

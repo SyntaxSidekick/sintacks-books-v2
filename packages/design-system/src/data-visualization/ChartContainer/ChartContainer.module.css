@@ -1,16 +1,21 @@
 .root {
   display: grid;
   gap: var(--space-4);
+  inline-size: 100%;
+  min-inline-size: 0;
   padding: var(--space-5);
-  background: var(--surface-primary);
-  border: var(--border-width) solid var(--border-default);
+  background: var(--surface-card-background);
+  border: var(--border-width) solid var(--surface-panel-border);
   border-radius: var(--radius-lg);
+  box-shadow: var(--surface-panel-shadow);
 }
 
 .header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-4);
+  align-items: flex-start;
 }
 
 .summary {

@@ -1,25 +1,31 @@
 @layer sintacks.tokens {
   [data-theme="dark"] {
     color-scheme: dark;
-    --brand-primary: var(--primitive-indigo-400);
+    --brand-primary: var(--primitive-sapphire-500);
     --brand-primary-hover: var(--primitive-indigo-300);
     --brand-primary-active: var(--primitive-indigo-500);
     --brand-accent: var(--primitive-violet-400);
     --brand-accent-soft: #1a1840;
-    --text-primary: var(--primitive-slate-50);
-    --text-secondary: var(--primitive-slate-400);
+    --text-primary: #f7f9ff;
+    --text-secondary: #b9c4d6;
     --text-muted: var(--primitive-slate-500);
     --text-inverse: var(--primitive-ink-900);
     --text-brand: var(--primitive-indigo-400);
-    --background-canvas: #0c0e16;
-    --surface-primary: #13162a;
-    --surface-secondary: #1a1e35;
-    --surface-tertiary: #1e2240;
-    --surface-raised: #1f2340;
-    --surface-overlay: #252a4a;
-    --border-subtle: #1a1e35;
-    --border-default: #252a4a;
-    --border-strong: var(--primitive-slate-700);
+    --background-canvas: var(--primitive-midnight-950);
+    --surface-primary: #0b1430;
+    --surface-secondary: #101b3a;
+    --surface-tertiary: #172446;
+    --surface-sunken: #071025;
+    --surface-raised: #111d3d;
+    --surface-overlay: #142349;
+    --surface-interactive: #142349;
+    --surface-interactive-hover: #1b2c57;
+    --border-subtle: rgb(148 163 184 / 12%);
+    --border-default: rgb(148 163 184 / 20%);
+    --border-strong: rgb(191 219 254 / 32%);
+    --shadow-color: rgb(0 0 0 / 26%);
+    --shadow-color-md: rgb(0 0 0 / 36%);
+    --shadow-color-lg: rgb(0 0 0 / 48%);
     --status-success: var(--primitive-green-400);
     --status-success-soft: #052e16;
     --status-warning: var(--primitive-amber-400);
@@ -30,12 +36,14 @@
     --status-info-soft: #1a1840;
     --status-neutral: var(--primitive-slate-400);
     --status-neutral-soft: #1a1e35;
-    --chart-1: var(--primitive-indigo-400);
-    --chart-2: var(--primitive-violet-400);
-    --chart-3: var(--primitive-cyan-400);
-    --chart-4: var(--primitive-amber-400);
-    --chart-5: var(--primitive-green-400);
-    --chart-6: var(--primitive-red-400);
+    --chart-1: var(--primitive-sapphire-500);
+    --chart-2: var(--primitive-indigo-400);
+    --chart-3: var(--primitive-violet-400);
+    --chart-4: var(--primitive-cyan-400);
+    --chart-5: var(--primitive-amber-400);
+    --chart-6: var(--primitive-magenta-500);
     --chart-7: var(--primitive-slate-400);
+    --chart-positive: var(--primitive-green-400);
+    --chart-negative: var(--primitive-red-400);
   }
 }

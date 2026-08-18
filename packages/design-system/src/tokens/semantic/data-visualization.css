@@ -1,11 +1,15 @@
 @layer sintacks.tokens {
   :root {
-    --chart-1: var(--primitive-indigo-600);
-    --chart-2: var(--primitive-violet-600);
-    --chart-3: var(--primitive-cyan-500);
-    --chart-4: var(--primitive-amber-500);
-    --chart-5: var(--primitive-green-600);
-    --chart-6: var(--primitive-red-600);
+    --chart-1: var(--primitive-sapphire-600);
+    --chart-2: var(--primitive-indigo-600);
+    --chart-3: var(--primitive-violet-600);
+    --chart-4: var(--primitive-cyan-500);
+    --chart-5: var(--primitive-amber-500);
+    --chart-6: var(--primitive-magenta-500);
     --chart-7: var(--primitive-slate-500);
+    --chart-positive: var(--primitive-green-600);
+    --chart-negative: var(--primitive-red-600);
+    --chart-grid: color-mix(in srgb, var(--border-default) 72%, transparent);
+    --chart-fill-brand: color-mix(in srgb, var(--chart-1) 14%, transparent);
   }
 }

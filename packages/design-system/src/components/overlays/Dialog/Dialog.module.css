@@ -3,11 +3,12 @@
   padding: var(--space-6);
   color: var(--text-primary);
   background: var(--surface-overlay);
-  border: var(--border-width) solid var(--border-default);
+  border: var(--border-width) solid var(--border-strong);
   border-radius: var(--radius-lg);
-  box-shadow: var(--elevation-overlay);
+  box-shadow: var(--surface-dialog-shadow);
 
   &::backdrop {
-    background: rgb(15 23 42 / 48%);
+    background: color-mix(in srgb, var(--primitive-midnight-950) 66%, transparent);
+    backdrop-filter: blur(6px);
   }
 }

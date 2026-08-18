@@ -1,14 +1,27 @@
 @layer sintacks.tokens {
   :root {
-    --button-primary-background: var(--interactive-primary);
-    --button-primary-background-hover: var(--interactive-hover);
+    --button-primary-background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--interactive-primary) 88%, white),
+      var(--interactive-primary) 72%,
+      var(--interactive-pressed)
+    );
+    --button-primary-background-hover: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--interactive-hover) 88%, white),
+      var(--interactive-hover)
+    );
     --button-primary-text: var(--text-inverse);
-    --button-secondary-background: var(--surface-primary);
+    --button-secondary-background: linear-gradient(
+      180deg,
+      var(--surface-primary),
+      color-mix(in srgb, var(--surface-primary) 88%, var(--surface-secondary))
+    );
     --button-secondary-background-hover: var(--surface-secondary);
     --button-secondary-text: var(--text-primary);
     --button-danger-background: var(--status-danger);
     --button-danger-text: var(--text-inverse);
-    --field-background: var(--surface-primary);
+    --field-background: color-mix(in srgb, var(--surface-primary) 96%, var(--surface-sunken));
     --field-border: var(--border-default);
     --field-border-hover: var(--border-strong);
     --field-border-invalid: var(--status-danger);

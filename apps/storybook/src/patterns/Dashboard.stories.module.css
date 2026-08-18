@@ -1,0 +1,221 @@
+.canvas {
+  box-sizing: border-box;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  overflow-x: clip;
+  padding: clamp(1rem, 2vw, 2rem);
+  background:
+    radial-gradient(
+      circle at 18% 0,
+      color-mix(in srgb, var(--chart-4) 10%, transparent),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 88% 8%,
+      color-mix(in srgb, var(--chart-1) 14%, transparent),
+      transparent 28rem
+    ),
+    var(--background-canvas);
+  border-radius: var(--radius-lg);
+}
+
+.dashboard {
+  display: grid;
+  gap: var(--space-4);
+  inline-size: 100%;
+  min-inline-size: 0;
+  max-inline-size: 82rem;
+  margin-inline: auto;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.period {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--control-height-md);
+  padding-inline: var(--space-4);
+  color: var(--text-primary);
+  background: var(--surface-primary);
+  border: var(--border-width) solid var(--border-default);
+  border-radius: var(--radius-md);
+  box-shadow: var(--elevation-raised);
+  font-weight: var(--font-weight-medium);
+}
+
+.metricGrid,
+.contentGrid,
+.lowerGrid {
+  display: grid;
+  gap: var(--space-4);
+  min-inline-size: 0;
+}
+
+.metricGrid {
+  grid-template-columns: minmax(18rem, 1.4fr) repeat(3, minmax(12rem, 1fr));
+}
+
+.contentGrid {
+  grid-template-columns: minmax(24rem, 1.5fr) minmax(18rem, 1fr);
+}
+
+.lowerGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.heroMetric {
+  color: white;
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 18%), transparent 28%),
+    linear-gradient(
+      135deg,
+      var(--primitive-indigo-800),
+      var(--interactive-primary) 48%,
+      var(--primitive-indigo-700)
+    );
+  border-color: color-mix(in srgb, white 16%, transparent);
+  box-shadow: 0 24px 48px -24px color-mix(in srgb, var(--interactive-primary) 74%, black);
+}
+
+.metric {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.metricLabel {
+  color: color-mix(in srgb, currentColor 72%, transparent);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.metricValue {
+  font-family: var(--text-display-font);
+  font-size: clamp(1.75rem, 1.3rem + 1.2vw, 2.65rem);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  font-variant-numeric: var(--numeric-font-variant);
+}
+
+.metricDelta {
+  color: var(--status-success);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.heroMetric .metricDelta {
+  color: #b9f6d0;
+}
+
+.sparkline {
+  inline-size: 100%;
+  block-size: 3.25rem;
+  overflow: visible;
+}
+
+.chart {
+  inline-size: 100%;
+  min-block-size: 18rem;
+  overflow: visible;
+}
+
+.donutWrap {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.85fr) 1fr;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.legend,
+.list {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legendItem,
+.invoice,
+.milestone {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.dot {
+  inline-size: 0.625rem;
+  block-size: 0.625rem;
+  background: var(--dot-color, var(--chart-1));
+  border-radius: var(--radius-full);
+}
+
+.muted {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.money {
+  font-variant-numeric: var(--numeric-font-variant);
+  font-weight: var(--font-weight-semibold);
+}
+
+.barList {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) minmax(8rem, 2fr) auto;
+  gap: var(--space-3);
+  align-items: center;
+  font-size: var(--font-size-sm);
+}
+
+.barTrack {
+  block-size: 0.75rem;
+  overflow: hidden;
+  background: var(--surface-sunken);
+  border-radius: var(--radius-full);
+}
+
+.barFill {
+  inline-size: var(--bar-value);
+  block-size: 100%;
+  background: linear-gradient(90deg, var(--chart-2), var(--chart-4));
+  border-radius: inherit;
+}
+
+@media (max-width: 68rem) {
+  .metricGrid,
+  .contentGrid,
+  .lowerGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .heroMetric {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 48rem) {
+  .metricGrid,
+  .contentGrid,
+  .lowerGrid,
+  .donutWrap {
+    grid-template-columns: 1fr;
+  }
+
+  .barRow {
+    grid-template-columns: 1fr;
+  }
+}

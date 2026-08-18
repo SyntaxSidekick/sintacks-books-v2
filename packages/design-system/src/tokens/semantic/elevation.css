@@ -2,6 +2,10 @@
   :root {
     --elevation-surface: var(--shadow-xs);
     --elevation-raised: var(--shadow-sm);
+    --elevation-floating: var(--shadow-md);
+    --elevation-dialog: var(--shadow-xl);
     --elevation-overlay: var(--shadow-lg);
+    --elevation-focus: var(--shadow-focus);
+    --elevation-interactive: var(--shadow-interactive);
   }
 }

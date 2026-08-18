@@ -10,11 +10,14 @@
     font-family: var(--text-body-font);
     line-height: var(--line-height-body);
     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "tnum";
   }
 
   :focus-visible {
     outline: var(--focus-ring-width) solid var(--focus-ring-color);
     outline-offset: var(--focus-ring-offset);
+    box-shadow: var(--elevation-focus);
   }
 
   @media (prefers-reduced-motion: reduce) {

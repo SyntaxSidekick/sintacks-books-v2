@@ -1,11 +1,14 @@
 @layer sintacks.tokens {
   :root {
-    --shadow-color: rgb(15 23 42 / 8%);
-    --shadow-color-md: rgb(15 23 42 / 12%);
-    --shadow-color-lg: rgb(15 23 42 / 18%);
+    --shadow-color: rgb(9 22 46 / 7%);
+    --shadow-color-md: rgb(9 22 46 / 12%);
+    --shadow-color-lg: rgb(9 22 46 / 18%);
     --shadow-xs: 0 1px 2px var(--shadow-color);
-    --shadow-sm: 0 1px 3px var(--shadow-color), 0 1px 2px rgb(15 23 42 / 6%);
-    --shadow-md: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -2px var(--shadow-color-md);
-    --shadow-lg: 0 10px 24px -3px var(--shadow-color-md), 0 4px 8px -4px var(--shadow-color-lg);
+    --shadow-sm: 0 1px 2px rgb(9 22 46 / 6%), 0 4px 10px -8px var(--shadow-color-md);
+    --shadow-md: 0 8px 20px -14px var(--shadow-color-lg), 0 2px 8px -4px var(--shadow-color-md);
+    --shadow-lg: 0 18px 45px -26px var(--shadow-color-lg), 0 8px 20px -16px var(--shadow-color-md);
+    --shadow-xl: 0 26px 70px -34px rgb(9 22 46 / 28%), 0 12px 28px -18px rgb(9 22 46 / 22%);
+    --shadow-focus: 0 0 0 4px color-mix(in srgb, var(--focus-ring-color) 18%, transparent);
+    --shadow-interactive: 0 10px 22px -16px rgb(37 99 235 / 45%), 0 2px 5px rgb(9 22 46 / 10%);
   }
 }

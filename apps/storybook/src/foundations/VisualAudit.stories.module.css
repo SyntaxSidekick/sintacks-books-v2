@@ -1,0 +1,55 @@
+.audit {
+  display: grid;
+  gap: var(--space-5);
+  padding: clamp(1rem, 2vw, 2rem);
+  background: var(--background-canvas);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.swatch {
+  min-block-size: 4.5rem;
+  padding: var(--space-3);
+  color: var(--text-primary);
+  background: var(--swatch);
+  border: var(--border-width) solid var(--border-default);
+  border-radius: var(--radius-md);
+  box-shadow: var(--elevation-raised);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.display {
+  font-family: var(--text-display-font);
+  font-size: var(--font-size-4xl);
+  line-height: var(--line-height-tight);
+}
+
+.chart {
+  inline-size: 100%;
+  block-size: 10rem;
+}
+
+@media (max-width: 56rem) {
+  .grid,
+  .swatches {
+    grid-template-columns: 1fr;
+  }
+}

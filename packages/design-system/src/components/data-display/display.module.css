@@ -55,7 +55,11 @@
   background: var(--surface-card-background);
   border: var(--border-width) solid var(--surface-card-border);
   border-radius: var(--surface-card-radius);
-  box-shadow: var(--elevation-surface);
+  box-shadow: var(--surface-panel-shadow);
+
+  @container (max-width: 32rem) {
+    padding: var(--space-4);
+  }
 }
 
 .keyValue {
@@ -66,12 +70,15 @@
 .key {
   color: var(--text-secondary);
   font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
 }
 
 .value {
   color: var(--text-primary);
+  font-family: var(--text-display-font);
   font-weight: var(--font-weight-semibold);
   font-variant-numeric: var(--numeric-font-variant);
+  line-height: var(--line-height-tight);
 }
 
 .descriptionList {

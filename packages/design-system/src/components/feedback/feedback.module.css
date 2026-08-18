@@ -4,9 +4,10 @@
   gap: var(--space-1);
   padding: var(--space-4);
   color: var(--text-primary);
-  background: var(--surface-primary);
+  background: var(--surface-card-background);
   border: var(--border-width) solid var(--border-default);
   border-radius: var(--radius-md);
+  box-shadow: var(--elevation-raised);
 
   &[data-variant="success"] {
     border-color: var(--status-success);
@@ -40,15 +41,17 @@
 }
 
 .progressTrack {
-  block-size: 0.5rem;
+  block-size: 0.625rem;
   overflow: hidden;
   background: var(--surface-secondary);
+  border: var(--border-width) solid var(--border-subtle);
   border-radius: var(--radius-full);
 }
 
 .progressBar {
   block-size: 100%;
-  background: var(--interactive-primary);
+  background: linear-gradient(90deg, var(--chart-1), var(--chart-3));
+  border-radius: inherit;
 }
 
 .empty {
@@ -56,6 +59,12 @@
   justify-items: center;
   gap: var(--space-3);
   padding: var(--space-8);
+  background: radial-gradient(
+    circle at 50% 0,
+    color-mix(in srgb, var(--brand-accent-soft) 72%, transparent),
+    transparent 55%
+  );
+  border-radius: var(--radius-lg);
   text-align: center;
 }
 

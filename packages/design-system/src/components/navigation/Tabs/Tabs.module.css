@@ -6,19 +6,29 @@
 .list {
   display: flex;
   gap: var(--space-2);
-  border-block-end: var(--border-width) solid var(--border-default);
+  padding: var(--space-1);
+  background: var(--surface-sunken);
+  border: var(--border-width) solid var(--border-subtle);
+  border-radius: var(--radius-lg);
 }
 
 .tab {
-  padding: var(--space-3) var(--space-4);
+  padding: var(--space-2) var(--space-4);
   color: var(--text-secondary);
   background: transparent;
   border: 0;
-  border-block-end: var(--border-width-strong) solid transparent;
+  border-radius: var(--radius-md);
   cursor: pointer;
+  font-weight: var(--font-weight-medium);
 
   &[aria-selected="true"] {
-    color: var(--text-brand);
-    border-block-end-color: var(--interactive-primary);
+    color: var(--text-primary);
+    background: var(--surface-primary);
+    box-shadow: var(--elevation-raised);
+  }
+
+  &:hover:not([aria-selected="true"]) {
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--surface-primary) 54%, transparent);
   }
 }
